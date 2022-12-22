@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <style>
+            h2{
+                text-align: center;
+                color: blue;
+                font-style: italic;
+            }
+        </style>
+        <script type="text/javascript" charset="utf-8">
+            function validate(){
+                var mailformat=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var name=document.getElementById("x").value;
+                var pswd=document.getElementById("y").value;
+                var email=document.getElementById("z").value;
+                var pno=document.getElementById("w").value;
+                if(name.length<6){
+                    document.getElementById("x1").innerHTML="<p>required</p>";
+                }
+                else{
+                    document.getElementById("x1").innerHTML=" ";
+                }
+                if(pswd.length<6){
+                    document.getElementById("y1").innerHTML="<font>*required</font>";
+                }
+                else{
+                    document.getElementById("y1").innerHTML=" ";
+                }
+                if(email.match(mailformat)){
+                    document.getElementById("z1").innerHTML=" ";
+                }
+                else{
+                    document.getElementById("z1").innerHTML="<font>*required</font>";
+                }
+                if(pno.length!=10){
+                    document.getElementById("w1").innerHTML="<font>*required</font>";
+                }
+                else{
+                    document.getElementById("w1").innerHTML=" ";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Registration form</h2>
+        <form>
+            <table border="0">
+                <tr>
+                    <td><b>Enter name:</b></td>
+                    <td><input type="text" id="x" /></td>
+                    <td><span id="x1"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Enter password:</b></td>
+                    <td><input type="password" id="y"/></td>
+                    <td><span id="y1"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Enter email:</b></td>
+                    <td><input type="text" id="z"/></td>
+                    <td><span id="z1"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Enter phno:</b></td>
+                    <td><input type="text" id="w"/></td>
+                    <td><span id="w1"></span></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="" value="Submit" onclick="validate()"/></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+
